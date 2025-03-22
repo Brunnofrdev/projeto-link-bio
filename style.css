@@ -11,6 +11,7 @@
     --bg-url: url(./assets/bg-mobile.jpg);
     --stroke-color:  rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.1);
+    --highlight-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
@@ -89,14 +90,18 @@ body {
     z-index: 1;
     transform: translateY(-50%);
     padding-bottom: 20px;
+    animation: slide-back 0.3s;
    
 }
 
 .light .switch button {
-    right: 0px;
-    left: initial;
+   animation: slide-in 0.3s forwards;
 }
 
+
+.switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
 
 ul {
     list-style: none;
@@ -166,5 +171,23 @@ footer a {
 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
