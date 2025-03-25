@@ -1,15 +1,13 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 :root {
     --text-color: white;
     --bg-url: url(./assets/bg-mobile.jpg);
-    --stroke-color:  rgba(255, 255, 255, 0.5);
+    --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.1);
     --highlight-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assets/moon-stars.svg);
@@ -24,12 +22,9 @@
 }
 
 body * {
-
     font-family: 'Inter', sans-serif;
     color: var(--text-color);
-
 }
-
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
@@ -37,31 +32,34 @@ body {
 }
 
 .container {
-   width: 100%;
-   max-width: 588px;
-   margin: 56px auto 0px;
-   padding: 0 24px;
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    padding: 16px 24px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2), 0 -0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: var(--surface-color);
 }
 
 .profile img {
     width: 112px;
     display: block;
     margin: auto;
-
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .profile p {
     text-align: center;
-    font-size: 500;
+    font-size: 1.5rem;
     line-height: 24px;
     margin-top: 8px;
-
 }
 
 .switch {
     position: relative;
     width: 63px;
-    margin: 32px auto 4px; /* Aumenta a margem superior para mais espaçamento */
+    margin: 48px auto 4px;
 }
 
 .switch span {
@@ -75,9 +73,6 @@ body {
     border-radius: 9999px;
 }
 
-
-
-
 .switch button {
     width: 32px;
     height: 32px;
@@ -89,15 +84,12 @@ body {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
-    padding-bottom: 20px;
     animation: slide-back 0.3s;
-   
 }
 
 .light .switch button {
-   animation: slide-in 0.3s forwards;
+    animation: slide-in 0.3s forwards;
 }
-
 
 .switch button:hover {
     outline: 8px solid var(--highlight-color);
@@ -119,23 +111,22 @@ ul li a {
     text-decoration: none;
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border-radius: 8px;
     font-weight: 500;
-    transition: background 0.5s;
-
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.15);
+    transition: background 0.5s, box-shadow 0.3s ease-in-out;
 }
 
 ul li a:hover {
     background: rgba(159, 152, 152, 0.685);
     border: 1.5px solid var(--text-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    
+    gap: 16px;
     padding: 24px 0;
     font-size: 24px;
 }
@@ -146,12 +137,13 @@ ul li a:hover {
     justify-content: center;
     padding: 16px;
     border-radius: 50%;
-    transition: background 0.5s;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+    transition: background 0.5s, box-shadow 0.3s ease-in-out;
 }
+
 .social-links a:hover {
     background-color: rgba(159, 152, 152, 0.685);
-    
-    
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.3);
 }
 
 footer {
@@ -160,9 +152,7 @@ footer {
     font-size: 14px;
 }
 
-
-
-@media (min-width: 700px ) {
+@media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg);
     }
